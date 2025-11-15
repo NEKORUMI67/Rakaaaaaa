@@ -1,0 +1,84 @@
+/* DARK BACKGROUND */
+body {
+    margin: 0;
+    padding: 0;
+    background: #050505;
+    overflow: hidden;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* NEON BOX */
+.center-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 25px 40px;
+    background: rgba(10, 10, 10, 0.65);
+    backdrop-filter: blur(6px);
+
+    border: 4px solid #ff2dbd;
+    border-radius: 18px;
+    text-align: center;
+
+    box-shadow: 
+        0 0 12px #ff2dbd,
+        0 0 30px #ff2dbd,
+        inset 0 0 20px #ff2dbd;
+}
+
+.title {
+    color: #fff;
+    font-size: 36px;
+    text-shadow: 0 0 10px #ff2dbd;
+}
+
+.sub {
+    color: #ffbee9;
+}
+
+/* FALLING LOVE + ROSE */
+#falling {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#falling span {
+    position: absolute;
+    font-size: 28px;
+    top: -10%;
+    filter: drop-shadow(0 0 8px #ff2dbd);
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(120%) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* CURSOR LOVE POP */
+.cursor-love {
+    position: fixed;
+    font-size: 20px;
+    pointer-events: none;
+    filter: drop-shadow(0 0 8px #ff2dbd);
+    animation: pop 0.8s ease-out forwards;
+}
+
+@keyframes pop {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.3) translateY(-40px); opacity: 0; }
+}
